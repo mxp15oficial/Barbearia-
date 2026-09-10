@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbearia Santos - Cassino Style</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- CABEÇALHO DOURADO ESTILO CASSINO -->
+    <header class="casino-header">
+      <div class="casino-logo">BARBEARIA SANTOS</div>
+    </header>
+
+    <!-- TELA 1: LOGIN E CADASTRO -->
+    <div id="telaAuth" class="card-casino">
+      <div class="auth-tabs">
+        <button id="tabLogin" class="tab-btn active">ENTRAR</button>
+        <button id="tabCadastro" class="tab-btn">CADASTRAR</button>
+      </div>
+
+      <!-- FORMULÁRIO DE LOGIN -->
+      <form id="formLogin" class="auth-form">
+        <div class="field">
+          <label>📱 Número Celular:</label>
+          <input type="tel" id="loginTel" placeholder="(55) 99999-9999" maxlength="15" value="(55) " required>
+        </div>
+        <div class="field">
+          <label>🔑 Senha:</label>
+          <input type="password" id="loginSenha" placeholder="Digite sua senha" required>
+        </div>
+        <button type="submit" class="btn-casino">ENTRAR NA JOGADA</button>
+      </form>
+
+      <!-- FORMULÁRIO DE CADASTRO -->
+      <form id="formCadastro" class="auth-form hidden">
+        <div class="field">
+          <label>📱 Número Celular:</label>
+          <input type="tel" id="cadTel" placeholder="(55) 99999-9999" maxlength="15" value="(55) " required>
+        </div>
+        <div class="field">
+          <label>🔑 Senha:</label>
+          <input type="password" id="cadSenha1" placeholder="Crie uma senha" required>
+        </div>
+        <div class="field">
+          <label>🔑 Confirmar Senha:</label>
+          <input type="password" id="cadSenha2" placeholder="Repita a senha" required>
+        </div>
+        <button type="submit" class="btn-casino">CRIAR CONTA</button>
+      </form>
+    </div>
+
+    <!-- TELA 2: CATÁLOGO DE CORTES E AGENDAMENTO -->
+    <div id="telaPrincipal" class="hidden">
+      
+      <!-- BANNER COM TEXTO DE BOAS-VINDAS -->
+      <div class="banner-boas-vindas">
+        <h1>A barbearia que vai<br>transformar você</h1>
+        <p>Escolha seu corte e venha<br>ser feliz com nós</p>
+      </div>
+
+      <!-- BARRA / BOTÃO DE AÇÃO -->
+      <div class="barra-acao">
+        <button id="btnMarcarCorteRapido" class="btn-marcar-horario">
+          MARCAR HORÁRIO DOS CORTES ⏬
+        </button>
+      </div>
+
+      <!-- GRADE DE FOTOS DOS CABELOS -->
+      <div class="grid-cabelos" id="gridCabelos">
+        <!-- Gerado via JavaScript -->
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- MODAL DE VISUALIZAÇÃO DO CORTE SELECIONADO -->
+  <div id="modalCorte" class="modal-overlay hidden">
+    <div class="modal-casino">
+      <div class="modal-corte-header">
+        <h3 id="modalNomeCorte">Nome do Corte</h3>
+      </div>
+      
+      <div class="modal-corte-body">
+        <img id="modalImgCorte" src="" alt="Foto do Corte">
+        <p id="modalPrecoCorte" class="preco-tag">R$ 0,00</p>
+      </div>
+
+      <div class="modal-corte-acoes">
+        <button id="btnFecharModal" class="btn-acao btn-cancelar" title="Voltar/Sair">❌</button>
+        <button id="btnConfirmarCorte" class="btn-acao btn-confirmar" title="Marcar Corte">✅</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE FORMULÁRIO DE AGENDAMENTO (DATA E HORA) -->
+  <div id="modalAgendamento" class="modal-overlay hidden">
+    <div class="modal-casino">
+      <div class="modal-corte-header">
+        <h3>📅 Selecione Data e Hora</h3>
+      </div>
+
+      <div class="field">
+        <label>Selecione o Dia:</label>
+        <input type="date" id="agendamentoData">
+      </div>
+
+      <div class="field">
+        <label>Horário Desejado:</label>
+        <input type="time" id="agendamentoHora" step="1800">
+      </div>
+
+      <p class="info-varredura">⚠️ O sistema faz varredura automática garantindo intervalo mínimo de 30 minutos entre clientes.</p>
+
+      <div class="modal-corte-acoes">
+        <button id="btnCancelarAgendamento" class="btn-acao btn-cancelar">❌</button>
+        <button id="btnFinalizarAgendamento" class="btn-acao btn-confirmar">✅ CONFIRMAR AGENDAMENTO</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+  </html>
+  
